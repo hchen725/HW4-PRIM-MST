@@ -3,7 +3,6 @@ import numpy as np
 from mst import Graph
 from sklearn.metrics import pairwise_distances
 
-
 def check_mst(adj_mat: np.ndarray, 
               mst: np.ndarray, 
               expected_weight: int, 

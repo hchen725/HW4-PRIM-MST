@@ -29,7 +29,7 @@ You will need following packages:
 
 We also strongly recommend you use the built-in [heapq](https://docs.python.org/3/library/heapq.html) module.
 
-## Completing the assignment
+## Completing the assignment 
 
 Push your code to GitHub with passing unit tests, and submit a link to your repository through Google Classroom.
 
