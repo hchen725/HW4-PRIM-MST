@@ -65,10 +65,26 @@ def test_mst_single_cell_data():
     check_mst(g.adj_mat, g.mst, 57.263561605571695)
 
 
-def test_mst_student():
+def test_unconnected_network():
     """
-    
-    TODO: Write at least one unit test for MST construction.
-    
+    Test a network that has a node completely unconnected from the rest of the network
     """
-    pass
+    unconnected_mat = './test/unconnected_mat.csv'
+    g = Graph(unconnected_mat)
+    with pytest.raises(ValueError, match = "Nodes do not all connect, MST does not exist"):
+        g.construct_mst()
+
+def test_one_node_network():
+    """
+    Test a network that has a node completely unconnected from the rest of the network
+    """
+    one_node_mat = './test/one_node_mat.csv'
+    g = Graph(one_node_mat)
+    with pytest.raises(ValueError, match = "Only a single node present"):
+        g.construct_mst()
+
+def test_rect_mat():
+    rect_mat = "./test/rect_mat.csv"
+    g = Graph(rect_mat)
+    with pytest.raises(ValueError, match = "Check mat to make sure it's square"):
+        g.construct_mst()
